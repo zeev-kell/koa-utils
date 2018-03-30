@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "sourceMap": true,
+    "target": "es5",
+    "experimentalDecorators": true
+  },
+  "files": [
+    "index.d.ts"
+  ]
+}
