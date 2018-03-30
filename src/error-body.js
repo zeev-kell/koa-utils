@@ -10,16 +10,13 @@ module.exports = function ({serviceCode, IS_DEVELOP}) {
     if (err.response && err.response.data) {
       err = err.response.data;
     }
-    let body = {
+    return {
       status: (typeof err.status === 'number') ? err.status : 500,
       message: err.message || err.toString(),
       code: err.code || serviceCode,
       name: err.name,
-      stack: IS_DEVELOP && (Array.isArray(err.stack) ? err.stack : err.stack.split('\n'))
+      stack: IS_DEVELOP && (Array.isArray(err.stack) ? err.stack : err.stack.split('\n')),
+      id: traceId
     }
-    if (traceId) {
-      body.id = traceId;
-    }
-    return body;
   }
 }
