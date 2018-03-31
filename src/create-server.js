@@ -10,7 +10,7 @@ module.exports = function (app, {PORT, IS_HTTP, SSL_KEY_File, SSL_File}) {
   if (IS_HTTP) {
     return app.listen(PORT, () => {
       console.log(`Listening on http://localhost:${PORT}`)
-    })
+    });
   }
   const fs = require('fs');
   const {ssl} = {

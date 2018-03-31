@@ -8,4 +8,4 @@ module.exports = function (value) {
   }
   value = JSON.stringify(value);
   return value === '{}' ? undefined : value
-}
+};

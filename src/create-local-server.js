@@ -13,7 +13,7 @@ module.exports = function (app, {PORT, IS_HTTP, SSL_KEY_File, SSL_File}) {
       get: function () {
         return '127.0.0.1'
       }
-    })
+    });
     return app.listen(PORT, () => {
       console.log(`Listening on http://localhost:${PORT}`)
     })

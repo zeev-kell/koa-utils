@@ -10,9 +10,7 @@ module.exports = function ({serviceCode, IS_DEVELOP}) {
     if (err.response && err.response.data) {
       err = err.response.data;
     }
-    /**
-     * @type {{status: number, message: *|string, code: *, name, stack: *, id: string}}
-     */
+    /** @namespace body */
     return {
       status: (typeof err.status === 'number') ? err.status : 500,
       message: err.message || err.toString(),
