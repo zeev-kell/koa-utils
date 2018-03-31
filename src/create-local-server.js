@@ -19,7 +19,7 @@ module.exports = function (app, {PORT, IS_HTTP, SSL_KEY_File, SSL_File}) {
     })
   }
   const fs = require('fs');
-  const {ssl} = {
+  const ssl = {
     key: fs.readFileSync(SSL_KEY_File),
     cert: fs.readFileSync(SSL_File)
   };
