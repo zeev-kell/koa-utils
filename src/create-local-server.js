@@ -25,5 +25,5 @@ module.exports = function (app, {PORT, IS_HTTP, SSL_KEY_File, SSL_File}) {
   };
   require('https')
     .createServer(ssl, app.callback())
-    .listen(PORT, '127.0.0.1', () => console.log(`Listening on https://localhost:${PORT}`))
+    .listen(PORT, '127.0.0.1', () => console.log(`\x1b[31mListening on https://localhost:${PORT}\x1b[0m`))
 }
