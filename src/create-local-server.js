@@ -1,6 +1,7 @@
 /**
  * 判断是否需要证书启动
  * config.IS_HTTP 开发模式不启动证书
+ * 启动本地服务 127.0.0.1
  * @param app instanceof koa
  * @param config
  * @returns {*}
