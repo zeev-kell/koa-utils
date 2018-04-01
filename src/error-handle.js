@@ -31,7 +31,7 @@ class ErrorHandle {
   }
 
   /** @namespace ctx.app */
-  setCtx(err, ctx) {
+  setCtx(err, ctx, body) {
     let {IS_DEVELOP} = this.config;
     if (IS_DEVELOP) {
       ctx.app.emit('error', err, ctx)
