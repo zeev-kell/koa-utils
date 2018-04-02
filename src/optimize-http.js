@@ -1,7 +1,8 @@
 /**
- * Created by keziyuan on 2018/3/30 10:59.
+ * 省略http参数和body为空
+ * @param value
+ * @returns {*}
  */
-// 省略http参数和body为空
 module.exports = function (value) {
   if (typeof value === 'string') {
     return value
