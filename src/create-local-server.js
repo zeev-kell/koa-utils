@@ -15,7 +15,7 @@ module.exports = function (app, {PORT, IS_HTTP, SSL_KEY_File, SSL_File}) {
       }
     });
     return app.listen(PORT, () => {
-      console.log(`Listening on http://localhost:${PORT}`)
+      console.log(`Listening on http://127.0.0.1:${PORT}`)
     })
   }
   const fs = require('fs');
@@ -25,5 +25,5 @@ module.exports = function (app, {PORT, IS_HTTP, SSL_KEY_File, SSL_File}) {
   };
   require('https')
     .createServer(ssl, app.callback())
-    .listen(PORT, '127.0.0.1', () => console.log(`\x1b[31mListening on https://localhost:${PORT}\x1b[0m`))
+    .listen(PORT, '127.0.0.1', () => console.log(`\x1b[31mListening on https://127.0.0.1:${PORT}\x1b[0m`))
 }
