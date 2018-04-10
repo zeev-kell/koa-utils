@@ -15,9 +15,9 @@ module.exports = function ({serviceCode, IS_DEVELOP}) {
       status: (typeof err.status === 'number') ? err.status : 500,
       message: err.message || err.toString(),
       request_code: err.request_code || serviceCode,
+      request_id: traceId,
       name: err.name,
-      stack: IS_DEVELOP ? (Array.isArray(err.stack) ? err.stack : err.stack.split('\n')) : undefined,
-      request_id: traceId
+      stack: IS_DEVELOP ? (Array.isArray(err.stack) ? err.stack : err.stack.split('\n')) : undefined
     }
   }
 }
