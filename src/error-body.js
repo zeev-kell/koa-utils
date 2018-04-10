@@ -14,10 +14,10 @@ module.exports = function ({serviceCode, IS_DEVELOP}) {
     return {
       status: (typeof err.status === 'number') ? err.status : 500,
       message: err.message || err.toString(),
-      code: err.code || serviceCode,
+      request_code: err.request_code || serviceCode,
       name: err.name,
       stack: IS_DEVELOP ? (Array.isArray(err.stack) ? err.stack : err.stack.split('\n')) : undefined,
-      id: traceId
+      request_id: traceId
     }
   }
 }
