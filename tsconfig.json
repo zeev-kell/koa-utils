@@ -6,6 +6,7 @@
     "experimentalDecorators": true
   },
   "files": [
-    "index.d.ts"
+    "index.d.ts",
+    "./src/index.d.ts"
   ]
 }
