@@ -1,5 +1,7 @@
 // ecosystem.config.js
 module.exports = {
+  script: './app.js',
+  watch: true,
   env: {
     'NODE_BRANCH': 'develop',
     'IS_DEVELOP': true,
