@@ -13,7 +13,8 @@ module.exports = function (lang, ...arg) {
   try {
     return languages[lang].translate(...arg);
   } catch (e) {
-    console.log('can\'t translate ' + arg[0]);
+    console.log('can\'t translate ' + arg[0] + ' with e:');
+    console.log(e);
     return arg[0];
   }
 };

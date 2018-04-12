@@ -4,7 +4,7 @@ module.exports.zh = {
   insufficient_privilege: '权限不足',
   not_found: '资源未找到',
   invalid_parameters: '参数错误',
-  invalid_key_parameters: '参数 %{0} 错误',
+  invalid_key_parameters: '参数%{0}错误',
   bad_request: '错误的请求',
   data_abnormal: '数据异常',
 }
