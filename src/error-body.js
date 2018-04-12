@@ -16,6 +16,7 @@ module.exports = function ({serviceCode, IS_DEVELOP}) {
       name: err.name,
       message: err.message || err.toString(),
       msg: err.msg,
+      formatting: err.formatting,
       request_id: traceId,
       request_code: err.request_code || serviceCode,
       server_time: new Date(),
