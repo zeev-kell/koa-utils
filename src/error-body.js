@@ -14,11 +14,11 @@ module.exports = function ({serviceCode, IS_DEVELOP}) {
     return {
       status: (typeof err.status === 'number') ? err.status : 500,
       name: err.name,
-      stack: IS_DEVELOP ? (Array.isArray(err.stack) ? err.stack : err.stack.split('\n')) : undefined,
       msg: err.msg,
       message: err.message || err.toString(),
       request_id: traceId,
-      request_code: err.request_code || serviceCode
+      request_code: err.request_code || serviceCode,
+      stack: IS_DEVELOP ? (Array.isArray(err.stack) ? err.stack : err.stack.split('\n')) : undefined
     }
   }
 }

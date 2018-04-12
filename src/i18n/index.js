@@ -7,6 +7,9 @@ let languages = {
 }
 
 module.exports = function (lang, ...arg) {
+  if (!['zh', 'en'].includes(lang)) {
+    lang = 'zh';
+  }
   try {
     return languages[lang].translate(...arg);
   } catch (e) {
