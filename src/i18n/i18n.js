@@ -25,7 +25,7 @@ class Translator {
       value = this.applyNum(value, numOrFormatting);
       if (value === null) {
         console.log('not found ' + text);
-        return null;
+        return;
       }
       return formatting ? this.applyFormatting(value, formatting) : value;
     }
@@ -35,7 +35,7 @@ class Translator {
     let value = this.values[text];
     if (!value) {
       console.log('can\'t translate ' + text);
-      return null;
+      return;
     }
     return value;
   }
