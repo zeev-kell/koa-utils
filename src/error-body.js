@@ -18,6 +18,7 @@ module.exports = function ({serviceCode, IS_DEVELOP}) {
       msg: err.msg,
       request_id: traceId,
       request_code: err.request_code || serviceCode,
+      server_time: new Date(),
       stack: IS_DEVELOP ? (Array.isArray(err.stack) ? err.stack : err.stack.split('\n')) : undefined
     }
   }

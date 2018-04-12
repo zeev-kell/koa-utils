@@ -10,8 +10,8 @@ class PrefixRule {
    * @constructor
    */
   static async TimeValidation(ctx, next) {
-    errors.ifInvalid(ctx.query.startTime, 'startTimeValidationError')
-    errors.ifInvalid(ctx.query.endTime, 'endTimeValidationError')
+    errors.ifInvalid(ctx.query.startTime, null, 'startTime')
+    errors.ifInvalid(ctx.query.endTime, 'endTime')
     await next()
   }
 
@@ -25,8 +25,8 @@ class PrefixRule {
   static async PageValidation(ctx, next) {
     let currentPage = parseInt(ctx.query.currentPage)
     let pageSize = parseInt(ctx.query.pageSize)
-    errors.ifInvalid(currentPage > 0, 'currentPageValidationError')
-    errors.ifInvalid(pageSize > 0, 'pageSizeValidationError')
+    errors.ifInvalid(currentPage > 0, null, 'currentPage')
+    errors.ifInvalid(pageSize > 0, null, 'pageSize')
     ctx.query.currentPage = currentPage
     ctx.query.pageSize = pageSize
     await next()
