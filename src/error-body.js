@@ -13,9 +13,9 @@ module.exports = function ({serviceCode, IS_DEVELOP}) {
     /** @namespace body */
     return {
       status: (typeof err.status === 'number') ? err.status : 500,
-      name: err.name,
-      message: err.message || err.toString(),
       msg: err.msg,
+      message: err.message || err.toString(),
+      name: err.name,
       formatting: err.formatting,
       request_id: traceId,
       request_code: err.request_code || serviceCode,
