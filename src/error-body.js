@@ -13,11 +13,12 @@ module.exports = function ({serviceCode, IS_DEVELOP}) {
     /** @namespace body */
     return {
       status: (typeof err.status === 'number') ? err.status : 500,
-      message: err.message || err.toString(),
-      request_code: err.request_code || serviceCode,
-      request_id: traceId,
       name: err.name,
-      stack: IS_DEVELOP ? (Array.isArray(err.stack) ? err.stack : err.stack.split('\n')) : undefined
+      stack: IS_DEVELOP ? (Array.isArray(err.stack) ? err.stack : err.stack.split('\n')) : undefined,
+      msg: err.msg,
+      message: err.message || err.toString(),
+      request_id: traceId,
+      request_code: err.request_code || serviceCode
     }
   }
 }

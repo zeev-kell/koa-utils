@@ -7,7 +7,12 @@ let languages = {
 }
 
 module.exports = function (lang, ...arg) {
-  return languages[lang].translate(...arg);
+  try {
+    return languages[lang].translate(...arg);
+  } catch (e) {
+    console.log('can\'t translate ' + arg[0]);
+    return arg[0];
+  }
 };
 
 module.exports.languages = languages;
