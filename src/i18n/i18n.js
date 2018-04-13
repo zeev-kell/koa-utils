@@ -11,6 +11,13 @@ class Translator {
   }
 
   translate(text, numOrFormatting, formatting) {
+    // 判断是否含有 .
+    if (text.includes('.')) {
+      let [t, ...arg] = text.split('.');
+      arg = arg.map((a) => this.getValue(a));
+      let value = this.getValue(t);
+      return Translator.applyFormatting(value, arg);
+    }
     let value = this.getValue(text);
     // 直接翻译
     if (typeof numOrFormatting === 'undefined') {
