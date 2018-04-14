@@ -61,7 +61,7 @@ class Translator {
   }
 
   // 格式化 %{key} 字段
-  static applyFormatting(text, formatting) {
+  static applyFormatting(text = '', formatting) {
     for (let ind in formatting) {
       let regex = new RegExp('%\\{' + ind + '\\}', 'g');
       text = text.replace(regex, formatting[ind]);
