@@ -3,6 +3,22 @@ const errors = require('http-errors')
 class PrefixRule {
 
   /**
+   * @param next
+   * @param ctx
+   */
+  static async TokenServer(ctx, next) {
+    let authorization = ctx.header.authorization || ''
+    let userId = ctx.header['x-access-id']
+    errors.ok(authorization.startsWith('Bearer '), undefined, 'UnauthorizedError')
+    errors.ok(userId, undefined, 'UnauthorizedError')
+    ctx.$token = {
+      userId,
+      accessToken: authorization.substring(7)
+    }
+    await next()
+  }
+
+  /**
    * 校验 参数 startTime，endTime 是否合法
    * @param ctx
    * @param next
