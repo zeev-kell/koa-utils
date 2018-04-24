@@ -11,7 +11,9 @@ module.exports.zh = {
   project: '项目',
   tool: '工具',
   app: '流程',
-  job: '任务'
+  job: '任务',
+  internal_error: '网络繁忙',
+  server_exception: '服务器异常',
 }
 
 module.exports.en = {
@@ -19,7 +21,7 @@ module.exports.en = {
   token_expired: 'Session expired, please login again',
   insufficient_privilege: 'Insufficient privilege',
   not_found: 'Not Found',
-  not_found_key: '%{0} Not Found',
+  not_found_key: '%{0} Not found',
   invalid_parameter: 'Invalid parameters',
   invalid_key_parameter: 'Invalid parameter %{0}',
   bad_request: 'Bad request',
@@ -27,5 +29,7 @@ module.exports.en = {
   project: 'Project',
   tool: 'Tool',
   app: 'App',
-  job: 'Job'
+  job: 'Job',
+  internal_error: 'Internal error',
+  server_exception: 'Server exception',
 }

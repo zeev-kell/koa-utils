@@ -6,6 +6,6 @@
   "author": "zeevkell",
   "license": "ISC",
   "dependencies": {
-    "http-errors": "git+https://github.com/zeev-kell/http-errors.git#master"
+    "http-errors": "git+ssh://git@git.bgionline.cn:PhiX174/http-errors.git#develop"
   }
 }

@@ -22,11 +22,11 @@ module.exports = function ({serviceCode, IS_DEVELOP}) {
     }
     // 没有翻译，默认调用 i18n 翻译
     if (!body.msg) {
-      body.msg = i18n(ctx.get('Accept-Language'), err.message, err.formatting)
+      body.msg = i18n(ctx.get('Accept-Language'), err.message, err.formatting, 'server_exception')
     }
     // 开发环境
     if (IS_DEVELOP) {
-      body.stack = (Array.isArray(err.stack) ? err.stack : err.stack.split('\n'));
+      body.stack = err.stack && (Array.isArray(err.stack) ? err.stack : err.stack.split('\n'));
     }
     return body
   }

@@ -10,7 +10,7 @@ class Translator {
     }
   }
 
-  translate(text, numOrFormatting, formatting) {
+  translate(text, numOrFormatting, formatting, defaultText) {
     // 判断是否含有 .
     if (text.includes('.')) {
       let [t, ...arg] = text.split('.');
@@ -19,6 +19,9 @@ class Translator {
       return Translator.applyFormatting(value, arg);
     }
     let value = this.getValue(text);
+    if (defaultText && typeof value === 'undefined') {
+      return this.getValue(defaultText);
+    }
     // 直接翻译
     if (typeof numOrFormatting === 'undefined') {
       return value;
@@ -32,6 +35,9 @@ class Translator {
       value = Translator.applyNum(value, numOrFormatting);
       if (value === null) {
         console.log('not found ' + text);
+        if (defaultText) {
+          return this.getValue(defaultText);
+        }
         return;
       }
       return formatting ? Translator.applyFormatting(value, formatting) : value;
