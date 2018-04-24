@@ -21,7 +21,7 @@ module.exports = function ({serviceCode, IS_DEVELOP}) {
       server_time: new Date()
     }
     // 没有翻译，默认调用 i18n 翻译
-    if (!body.msg) {
+    if (!body.msg && typeof err.message !== 'undefined') {
       body.msg = i18n(ctx.get('Accept-Language'), err.message, err.formatting, 'server_exception')
     }
     // 开发环境
