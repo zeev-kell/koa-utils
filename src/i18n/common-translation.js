@@ -12,6 +12,7 @@ module.exports.zh = {
   tool: '工具',
   app: '流程',
   job: '任务',
+  internal_server: '服务器内部错误',
   internal_error: '网络繁忙',
   server_exception: '服务器异常',
 }
@@ -30,6 +31,7 @@ module.exports.en = {
   tool: 'Tool',
   app: 'App',
   job: 'Job',
+  internal_server: 'Internal server error',
   internal_error: 'Internal error',
   server_exception: 'Server exception',
 }
