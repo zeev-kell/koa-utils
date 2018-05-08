@@ -15,7 +15,9 @@ class PrefixRule {
       userId,
       accessToken: authorization.substring(7)
     }
-    await next()
+    if (next) {
+      await next()
+    }
   }
 
   /**
