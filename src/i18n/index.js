@@ -20,3 +20,9 @@ module.exports = function (lang, ...arg) {
 };
 
 module.exports.languages = languages;
+module.exports.bindLang = function (lang) {
+  if (!['zh', 'en'].includes(lang)) {
+    lang = 'zh';
+  }
+  return languages[lang].translate.bind(languages[lang]);
+}
