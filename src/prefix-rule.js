@@ -49,6 +49,38 @@ class PrefixRule {
     ctx.query.pageSize = pageSize
     await next()
   }
+
+  /**
+   * 初始化 from & to 参数为数字
+   * @param ctx
+   * @param next
+   * @return {Promise<void>}
+   * @constructor
+   */
+  static async InitRang(ctx, next) {
+    let {from, to} = ctx.query;
+    if (from && to) {
+      ctx.query.from = parseInt(from);
+      ctx.query.to = parseInt(to);
+    }
+    await next()
+  }
+
+  /**
+   * 初始化 currentPage & pageSize 参数为数字
+   * @param ctx
+   * @param next
+   * @return {Promise<void>}
+   * @constructor
+   */
+  static async InitPage(ctx, next) {
+    let {currentPage, pageSize} = ctx.query;
+    if (currentPage && pageSize) {
+      ctx.query.currentPage = parseInt(currentPage);
+      ctx.query.pageSize = parseInt(pageSize);
+    }
+    await next()
+  }
 }
 
 module.exports = PrefixRule
