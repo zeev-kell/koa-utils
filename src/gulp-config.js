@@ -4,5 +4,6 @@ module.exports = {
   'NODE_ENV': process.env.NODE_ENV || 'development',
   'NODE_BRANCH': process.env.NODE_BRANCH || 'local',
   'IS_DEVELOP': true,
-  'IS_HTTP': true
+  'IS_HTTP': true,
+  'IS_INSIDE': false
 }
