@@ -10,6 +10,7 @@ module.exports = {
   },
   env_master: {
     'NODE_BRANCH': 'master',
+    'IS_DEVELOP': true,
     'IS_LOCAL': true,
     'IS_INSIDE': true
   },
